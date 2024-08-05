@@ -23,7 +23,7 @@ namespace ShoesHat.DAL
 
 
             if (Shoes.Any()) return;
-            Shoe shoe = new Shoe { size = 9 , brand = "נייקי", color = "אדום" };
+            Shoe shoe = new Shoe { size = 9 , brand = "נייקי", Color = "אדום" };
             Shoes.Add(shoe);
             SaveChanges();
 
