@@ -2,7 +2,7 @@
 {
     public class Data
     {
-        string connectionString = "Server = DESKTOP-2RPAOHT\\SA;initial catalog = Friends; user id =SA;" +
+        string connectionString = "Server = DESKTOP-2RPAOHT\\SA;initial catalog = Hat; user id =SA;" +
             "password = 1234;TrustServerCertificate = Yes";
 
         private static Data _data;
