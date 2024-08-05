@@ -16,7 +16,7 @@ namespace ShoesHat.DAL
         private void Seed()
         {
             if(Hats.Any()) return;
-            Hat hat = new Hat { Color = "אדום", size = 9, brand = "נייקי", image = ""};
+            Hat hat = new Hat { Color = "אדום", size = 9, brand = "נייקי", image = "" };
             Hats.Add(hat);
             SaveChanges();
 

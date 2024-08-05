@@ -10,7 +10,7 @@ namespace ShoesHat.Models
         [Display(Name = "צבע")] public string Color { get; set; }
         [Display(Name = "מידה")] public int size { get; set; }
         [Display(Name = "מותג")] public string brand { get; set; }
-        [Display(Name = "תמונה")] public string image { get; set; }
+        [Display(Name = "תמונה")] public string image { get; set; } = string.Empty;
       
 
     }

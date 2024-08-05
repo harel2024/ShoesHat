@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ShoesHat.DAL;
+using ShoesHat.Models;
 
 namespace ShoesHat.Controllers
 {
@@ -27,16 +28,12 @@ namespace ShoesHat.Controllers
         // POST: HatController1/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        public ActionResult Create(Hat hat )
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            Data.Get.Hats.Add(hat); // הוספת הספריה למסד נתונים
+            Data.Get.SaveChanges(); // שמירת השינויים במסד נתונים
+            return RedirectToAction("Index"); // הפנייה לעמוד הראשי
+        
         }
 
         // GET: HatController1/Edit/5
