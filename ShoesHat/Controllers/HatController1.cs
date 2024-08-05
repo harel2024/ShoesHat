@@ -9,7 +9,7 @@ namespace ShoesHat.Controllers
         // GET: HatController1
         public ActionResult Index()
         {
-            return View(Data.Get.Hats);
+            return View(Data.Get.Hats..BindingAddress);
         }
 
         // GET: HatController1/Details/5
