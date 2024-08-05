@@ -2,7 +2,8 @@
 {
     public class Data
     {
-        string connectionString = "server=HAREL\\SA;initial catalog=ShoesHat;user id=SA;password=1234;TrustServerCertificate=Yes";
+        string connectionString = "Server = DESKTOP-2RPAOHT\\SA;initial catalog = Hat; user id =SA;" +
+            "password = 1234;TrustServerCertificate = Yes";
         private static Data _data;
         private dataLayer dataLayer;
 
