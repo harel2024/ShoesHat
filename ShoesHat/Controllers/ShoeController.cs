@@ -59,16 +59,22 @@ namespace ShoesHat.Controllers
         // GET: ShoeController/Delete/5
         public ActionResult Delete(int id)
         {
+            var shoe  =  Data.Get.Shoes.FirstOrDefault(sh => sh.Id == id);
+            if (shoe != null) return NotFound();
             return View();
         }
 
         // POST: ShoeController/Delete/5
-        [HttpPost]
+        [HttpPost, ActionName("Delete")]
+
         [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
+        public ActionResult Deleted(int id)
         {
             try
             {
+                var shoe = Data.Get.Shoes.FirstOrDefault(sh => sh.Id == id);
+                Data.Get.Shoes.Remove(shoe);
+                Data.Get.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
