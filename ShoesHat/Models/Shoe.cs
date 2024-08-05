@@ -9,11 +9,10 @@ namespace ShoesHat.Models
     {
         [Key]
         public int Id { get; set; }
-        [Display(Name = "מידה")] public int Size { get; set; }
-        [Display(Name = "מותג")] public string Brand { get; set; } = string.Empty;
+        [Display(Name = "מידה")] public int size { get; set; }
+        [Display(Name = "מותג")] public string brand { get; set; }
+        [Display(Name = "צבע")] public string color { get; set; }
         [Display(Name = "תמונה")] public Byte[] Image { get; set; }
-
-        [Display(Name = "הוספת תמונה"), NotMapped]
         public IFormFile setImage
         {
             get { return null; }
@@ -34,6 +33,7 @@ namespace ShoesHat.Models
                 Image = stream.ToArray(); // Store the image data as a byte array
             }
         }
+
 
     }
 }
