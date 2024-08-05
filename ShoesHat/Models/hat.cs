@@ -3,7 +3,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace ShoesHat.Models
 {
-    public class hat
+    public class Hat
     {
         public int Id { get; set; }
 
