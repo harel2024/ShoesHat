@@ -16,14 +16,14 @@ namespace ShoesHat.DAL
         private void Seed()
         {
             if(Hats.Any()) return;
-            Hat hat = new Hat { Color = "אדום", size = 9, brand = "נייקי" };
+            Hat hat = new Hat { Color = "אדום", size = 9, brand = "נייקי", image = ""};
             Hats.Add(hat);
             SaveChanges();
 
 
 
             if (Shoes.Any()) return;
-            Shoe shoe = new Shoe { size = 9 , brand = "נייקי", Color = "אדום" };
+            Shoe shoe = new Shoe { size = 9 , brand = "נייקי", Color = "אדום",image = "" };
             Shoes.Add(shoe);
             SaveChanges();
 
