@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShoesHat.DAL;
 
 namespace ShoesHat.Controllers
 {
@@ -8,7 +9,7 @@ namespace ShoesHat.Controllers
         // GET: HatController1
         public ActionResult Index()
         {
-            return View();
+            return View(Data.Get.Hats);
         }
 
         // GET: HatController1/Details/5
