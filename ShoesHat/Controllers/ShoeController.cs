@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ShoesHat.DAL;
+using ShoesHat.Models;
 
 namespace ShoesHat.Controllers
 {
@@ -8,7 +10,7 @@ namespace ShoesHat.Controllers
         // GET: ShoeController
         public ActionResult Index()
         {
-            return View();
+            return View((Data.Get.Shoes));
         }
 
         // GET: ShoeController/Details/5
@@ -23,19 +25,14 @@ namespace ShoesHat.Controllers
             return View();
         }
 
-        // POST: ShoeController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
+        // מטפל בשליחת הטופס ליצירת חבר חדש
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult Create(Shoe shoe)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            // מוסיף את החבר החדש למסד הנתונים ושומר שינויים
+            Data.Get.Shoes.Add(shoe);
+            Data.Get.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         // GET: ShoeController/Edit/5

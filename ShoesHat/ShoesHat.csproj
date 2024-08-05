@@ -7,13 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
+    <Compile Remove="Controllers\ShoeCotroller\**" />
+    <Content Remove="Controllers\ShoeCotroller\**" />
+    <EmbeddedResource Remove="Controllers\ShoeCotroller\**" />
+    <None Remove="Controllers\ShoeCotroller\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\ShoeCotroller\" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.7" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="8.0.3" />
   </ItemGroup>
 
 </Project>
